@@ -1,0 +1,110 @@
+@import '~/src/scss/colours.scss';
+@import './TransitionEffects.scss';
+
+.hidden {
+    opacity: 0;
+}
+
+.loginOverlay {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.5s;
+
+    background-color: $black-blurry-background;
+
+    .loginContainer {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 150px;
+
+        .loginImage {
+            margin-bottom: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            height: 11rem;
+            width: 11rem;
+            background-image: url('~/public/images/avatar.jpg');
+            background-size: cover;
+            border-radius: 150%;
+        }
+        
+        .userText {
+            font-size: 3rem;
+            color: $white;
+            margin-bottom: 0.5rem;
+        }
+
+        .descriptionText {
+            font-size: 1.4rem;
+            color: $darker-white;
+            margin-bottom: 1rem;
+            margin-left: 0.5rem;
+        }
+        
+        input {
+            line-height: 200px;
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            height: 3rem;
+            width: 3rem;
+            padding: 6px;
+            box-sizing: border-box;
+            color: $white;
+            background-color: $grey;
+            backdrop-filter: blur(.5rem);
+            font-weight: 900;
+            text-indent: 0.4rem;
+            transition: width 0.3s;
+        }
+        
+        input:focus {
+            width: 11rem;
+        }
+        
+        input::placeholder {
+            color: $white;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .inputWrapper {
+            text-align: center;
+        }
+
+
+        .helpIconWrapper {
+            height: 100%;
+            float: right;
+            display: flex;
+            align-items: center;
+
+            #help {
+                margin-left: 1rem;
+            }
+    
+            .icon {
+                color: $white;
+                font-size: 1.4rem;
+                height: 1.7rem;
+                width: 1.7rem;
+                border-radius: 50px;
+                border: $white solid 0.2rem;
+                transition: border 0.1s;
+    
+                &:hover {
+                    cursor: pointer;
+                    border: $grey solid 0.2rem;
+                    color: $grey;
+                }
+            }
+        }
+      }
+}
+
