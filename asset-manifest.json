@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/aj-os/static/css/main.62dd1796.css",
+    "main.js": "/aj-os/static/js/main.850eed76.js",
+    "static/media/SF-UI-Display-Regular.otf": "/aj-os/static/media/SF-UI-Display-Regular.696eab3309b55104976e.otf",
+    "static/media/background.jpg": "/aj-os/static/media/background.6d5600a8b9bd62d061e8.jpg",
+    "static/media/avatar.jpg": "/aj-os/static/media/avatar.e639598163223d3abbb6.jpg",
+    "index.html": "/aj-os/index.html",
+    "main.62dd1796.css.map": "/aj-os/static/css/main.62dd1796.css.map",
+    "main.850eed76.js.map": "/aj-os/static/js/main.850eed76.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62dd1796.css",
+    "static/js/main.850eed76.js"
+  ]
+}
