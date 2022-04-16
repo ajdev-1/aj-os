@@ -22,17 +22,47 @@
     align-items: center;
 }
 
-@media only screen and (max-width: 900px) {
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
     .dockWrapper {
+        position: relative;
+        width: 100vw;
+        background-color: transparent;
+        left: auto;
+    }
+}
+    
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+    .dockWrapper {
+        position: relative;
+        width: 90vw;
+    }
+}
+    
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1080px){
+    .dockWrapper {
+        position: relative;
         width: 90vw;
     }
 }
 
-@media only screen and (max-height: 1100px) {
+/* Media Query for Tablets Ipads portrait mode related to height */
+@media (min-width: 768px) and (max-width: 1280px) and (max-height: 820px){
     .dockWrapper {
-        width: 90vw;
+        position: relative;
+        width: 70vw;
     }
 }
 
-//height  1100px
-//width   900px
+    
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1081px) and (max-width: 1280px){
+
+}
+    
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+
+}

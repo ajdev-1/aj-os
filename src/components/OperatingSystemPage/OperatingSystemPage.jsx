@@ -3,8 +3,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import StatusBar from "../StatusBar/StatusBar";
-import AppGrid from "../AppGrid/AppGrid";
 import Dock from "../Dock/Dock";
+import AppWindow from "../AppWindow/AppWindow";
 
 class OperatingSystemPage extends React.Component {
 
@@ -13,7 +13,8 @@ class OperatingSystemPage extends React.Component {
 
         this.state = {
             isSnackbarOpen: true,
-            userHasBeenWelcomed: false 
+            userHasBeenWelcomed: false,
+            appsOpened: [] // -> Objects that indicate which app is currently opened
         }
     }
 
@@ -29,6 +30,38 @@ class OperatingSystemPage extends React.Component {
         toastId: 'welcomeToast'
     });
 
+    /**
+     * This function gets triggered as soon as the end user clicks on an app to open it.
+     * This opens the app window and fills it with the appParams' values.
+     * 
+     * @param {*} appParams: name, description
+     */
+    onAppInstanceToggled = (action, appParams={}) => {
+        let updatedAppsArray = null;
+
+        if (action === 'open' && Object.keys(appParams).length > 0) {
+            const isAppOpened = this.state.appsOpened.find(app => app.name === appParams.name);
+            updatedAppsArray = this.state.appsOpened.concat([appParams]);
+
+            if (!isAppOpened) {
+                this.setState({
+                    appsOpened: updatedAppsArray
+                })
+            }
+        } else if (action === 'close') {
+            updatedAppsArray = this.state.appsOpened.filter(app => {
+                console.log('app', app);
+                console.log('app', appParams.name);
+                return app.name !== appParams.name;
+            });
+            console.log('updated', updatedAppsArray)
+
+            this.setState({
+                appsOpened: updatedAppsArray
+            })
+        }
+    }
+
     componentDidMount() {
         if (!this.state.userHasBeenWelcomed) {
             this.welcomeToast();
@@ -37,12 +70,26 @@ class OperatingSystemPage extends React.Component {
     }
 
     render() {
-        console.log('rendered systems page');
+        let appWindows = null;
+        if (this.state.appsOpened.length > 0 ) {
+            appWindows = this.state.appsOpened.map(appParams => {
+                return (
+                    <div>
+                        <AppWindow
+                            key={appParams.name} 
+                            appParams={appParams}
+                            onAppInstanceToggled={this.onAppInstanceToggled}
+                        />
+                    </div> 
+                );
+            })
+        }
+        console.log('Opened apps', appWindows);
         return (
-            <div className="operatingSystemPageWrapper">
+            <div id="operatingSystemPageWrapper">
+                {appWindows}
                 <StatusBar/>
-                <AppGrid/>
-                <Dock/>
+                <Dock onAppInstanceToggled={this.onAppInstanceToggled}/>
             </div>
         )
     }

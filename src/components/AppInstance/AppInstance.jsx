@@ -3,6 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Tooltip } from '@mui/material';
 
+
 class AppInstance extends React.Component {
 
     constructor(props) {
@@ -28,7 +29,14 @@ class AppInstance extends React.Component {
             aTag.href = this.state.appLink.whereToGo;
             aTag.click();
         } else {
-            // Open modal/ whatever... TBD
+            this.props.onAppInstanceToggled('open', {
+                name: this.state.appText,
+                description: 'TBD',
+                disableDragging: window.innerWidth <= 1280,
+                enableResizing: window.innerWidth > 1280,
+                colour: this.state.appColour,
+                logo: this.state.appLogo
+            })
         }
     }
 
@@ -40,7 +48,7 @@ class AppInstance extends React.Component {
         }
         
         if(typeof this.state.appLogo === "string") {
-            console.log('setting background', this.state.appLogo);
+            document.body.style.backgroundImage = this.state.appLogo;
             this.appLogoRef.current.style.backgroundImage = this.state.appLogo;
         }
 
@@ -50,18 +58,20 @@ class AppInstance extends React.Component {
     }
     
     render(){
-        const app =
-            <div onClick={this.redirectToAppLink} className="appInstanceWrapper">
-                <div ref={this.appLogoRef} id="appLogo">
-                    { typeof this.state.appLogo !== "string"? <FontAwesomeIcon icon={this.state.appLogo}/> : null } 
-                </div>
-                <div id="appText">{this.state.appText}</div>
+        const appLogoElement = 
+            <div onClick={this.redirectToAppLink} ref={this.appLogoRef} id="appLogo">
+                { typeof this.state.appLogo !== "string"? <FontAwesomeIcon icon={this.state.appLogo}/> : null } 
             </div>;
 
         return (
-            this.state.appTooltip === ""? app :
-                <Tooltip  title={this.state.appTooltip} placement="right" >{app}</Tooltip>
-        )
+            <div className="appInstanceWrapper">
+                    {this.state.appTooltip === ""? appLogoElement :
+                        <Tooltip  title={this.state.appTooltip} placement="right" >
+                            {appLogoElement}
+                        </Tooltip>}
+                <div id="appText">{this.state.appText}</div>
+            </div>
+        );
     }
 }
 

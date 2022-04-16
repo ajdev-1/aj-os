@@ -1,11 +1,12 @@
 @import '~/src/scss/colours.scss';
 
 .statusBarWrapper {
+    z-index: 2;
     position: absolute;
     width: 20rem;
     height: 3rem;
     border-radius: 20px;
-    background-color: $darker-white;
+    background-color: $grey;
     font-size: 1.5rem;
     text-align: center;
     align-items: center;
@@ -20,7 +21,8 @@
     }
 }
 
-@media only screen and (max-width: 450px) {
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
     .statusBarWrapper {
         width: 90%;
     }
