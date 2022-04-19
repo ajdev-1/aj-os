@@ -49,11 +49,8 @@ class OperatingSystemPage extends React.Component {
             }
         } else if (action === 'close') {
             updatedAppsArray = this.state.appsOpened.filter(app => {
-                console.log('app', app);
-                console.log('app', appParams.name);
                 return app.name !== appParams.name;
             });
-            console.log('updated', updatedAppsArray)
 
             this.setState({
                 appsOpened: updatedAppsArray

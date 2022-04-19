@@ -35,7 +35,8 @@ class AppInstance extends React.Component {
                 disableDragging: window.innerWidth <= 1280,
                 enableResizing: window.innerWidth > 1280,
                 colour: this.state.appColour,
-                logo: this.state.appLogo
+                logo: this.state.appLogo,
+                link: this.state.appLink
             })
         }
     }

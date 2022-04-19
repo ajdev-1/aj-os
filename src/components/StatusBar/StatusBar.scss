@@ -1,29 +1,61 @@
 @import '~/src/scss/colours.scss';
 
-.statusBarWrapper {
-    z-index: 2;
-    position: absolute;
-    width: 15rem;
-    height: 3rem;
-    border-radius: 20px;
-    background-color: $grey;
-    font-size: 1.5rem;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    font-weight: bold;
-    right: 1rem;
-    top: 1rem;
-    color: $white;
+.statusBar {
 
-    #date {
-        margin: auto;
+
+    .sourceCodeWrapper {
+        width: 15rem;
+        left: 1.5rem;
+        z-index: 2;
+        position: absolute;
+        border-radius: 10rem;
+        right: 15rem;
+        top: 1rem;
+        color: $white;
+
+        .fabBtnStatusbar {
+            position: absolute;
+            left: 0rem;
+        }
+    }
+
+    .iconWrapper {
+        width: 3rem;
+        height: 3rem;
+        background-color: $grey;
+        border-radius: 10rem;
+    }
+
+    .statusBarWrapper {
+        z-index: 2;
+        position: absolute;
+        width: 15rem;
+        height: 3rem;
+        border-radius: 20px;
+        background-color: $grey;
+        font-size: 1.5rem;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        font-weight: bold;
+        right: 1rem;
+        top: 1rem;
+        color: $white;
+    
+        #date {
+            margin: auto;
+        }
     }
 }
+
 
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
     .statusBarWrapper {
-        width: 90%;
+        width: 50% !important;
+    }
+
+    .sourceCodeWrapper {
+        width: 40% !important;
     }
 }

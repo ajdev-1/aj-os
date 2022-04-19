@@ -1,9 +1,10 @@
 import './AppWindow.scss';
 import React from 'react';
 import { Rnd } from 'react-rnd';
-
-import AppWindowContent from '../AppWindowContent/AppWindowContent';
-
+import Fab from '@mui/material/Fab';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { faClose, faMaximize, faMinimize } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -11,6 +12,18 @@ class AppWindow extends React.Component {
 
     constructor(props) {
         super(props);
+
+        /**
+         * Structure of appParams:
+         * - colour: Object
+         *      - isRadiant: bool
+         *      - colour: string
+         * - description: string
+         * - disableDragging: bool
+         * - enableDragging: bool
+         * - logo: Object (FontAwesome)
+         * - name: string
+         */
         this.appParams = props.appParams;
 
         this.appWindowHeaderRef = React.createRef();
@@ -26,6 +39,14 @@ class AppWindow extends React.Component {
             isMaximized: false,
             isDeviceDesktop: window.innerWidth > 1280
         }
+    }
+
+    redirectToAppLink = (paperLink) => {
+        const aTag = document.createElement("a");
+        aTag.rel = "noopener";
+        aTag.target = "_blank";
+        aTag.href = typeof paperLink == "string"? this.appParams.link.paper : this.appParams.link.whereToGo;
+        aTag.click();
     }
 
     closeWindow = () => {
@@ -55,7 +76,6 @@ class AppWindow extends React.Component {
     }
 
     adjustAppWindowHeight = () => {
-        console.log(this.appWindowRef.resizableElement.current.clientHeight);
         const newHeight = `${this.appWindowRef.resizableElement.current.clientHeight}px`;
 
         this.setState({
@@ -67,6 +87,7 @@ class AppWindow extends React.Component {
     componentDidMount() {
         if (!this.state.isInitialized) {
             this.appWindowHeaderRef.current.style.background = this.appParams.colour.colour;
+            //this.appWindowHeaderRef.current.style.background = "rgb(188, 188, 188)";
 
             //Dynamically set the height of the content wrapper, to adjust the scrollbar
             this.appWindowContentRef.current.style.height = this.state.appWindowHeight;
@@ -119,26 +140,53 @@ class AppWindow extends React.Component {
                     }
                 >
                     <div ref={this.appWindowHeaderRef} className="appWindowHeader">
-                        <div onClick={this.closeWindow} className="appWindowHeaderBtn">
-                            <FontAwesomeIcon icon={faClose}/>
+                        <div className="appWindowHeaderCloseTitle">
+                            {this.appParams.name}
                         </div>
                         {
-                            this.state.isDeviceDesktop?
+                            this.state.isDeviceDesktop && !this.state.isMaximized?
                                 <div onClick={this.maximizeWindow} className="appWindowHeaderBtn">
                                     <FontAwesomeIcon icon={faMaximize}/>
                                 </div> : null
                         }
                         {
-                            this.state.isDeviceDesktop?
+                            this.state.isDeviceDesktop && this.state.isMaximized?
                                 <div onClick={this.minimizeWindow} className="appWindowHeaderBtn">
                                     <FontAwesomeIcon icon={faMinimize}/>
                                 </div> : null
                         }
-                        <div className="appWindowHeaderCloseTitle">
-                                {this.appParams.name}
+                        <div onClick={this.closeWindow} className="appWindowHeaderBtn">
+                            <FontAwesomeIcon icon={faClose}/>
                         </div>
                     </div>
                     <div ref={this.appWindowContentRef} className="appWindowContent">
+                        {/* GitHub Project*/}
+                        {
+                            this.appParams.link.whereToGo.includes('git')?
+                                <Fab className="fabBtn fabBtnFirst" onClick={this.redirectToAppLink} color="info" variant="extended">
+                                    <GitHubIcon sx={{ mr: 1 }} />
+                                    Open GitHub
+                                </Fab> : null
+                        }
+
+                        {/* BEE Project*/}
+                        {
+                            this.appParams.link.whereToGo.includes('www.umwelt-campus.de')?
+                                <Fab className="fabBtn fabBtnFirst" onClick={this.redirectToAppLink} color="warning" variant="extended">
+                                    <NewspaperIcon sx={{ mr: 1 }} />
+                                    Open press article
+                                </Fab> : null
+                        }
+                        
+                        {
+                            this.appParams.link.paper?
+                                <Fab className="fabBtn fabBtnSecond" onClick={() => {
+                                    this.redirectToAppLink(this.appParams.link.paper);
+                                }} color="primary" variant="extended">
+                                    <OpenInNewIcon sx={{ mr: 1 }} />
+                                    Open IEEE paper
+                                </Fab> : null
+                        }
                         
                     </div>
                 </Rnd>

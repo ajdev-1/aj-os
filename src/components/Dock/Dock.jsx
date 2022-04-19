@@ -49,12 +49,12 @@ class Dock extends React.Component {
                     logo={faNewspaper}
                     link={{
                         isExternal: false,
-                        whereToGo: ""
+                        whereToGo: "https://github.com/ajdev-1/corona-press-analysis"
                     }}
                     tooltip="Opens an overview of my COVID-19 internationl press analysis with Python."
                     colour={{
                         isRadiant: false,
-                        colour: "#A20021"
+                        colour: "rgb(159, 95, 95)"
                     }}
                 />
                 <AppInstance
@@ -63,7 +63,7 @@ class Dock extends React.Component {
                     logo={faTrashCan}
                     link={{
                         isExternal: false,
-                        whereToGo: ""
+                        whereToGo: "https://github.com/ajdev-1/garbage-detector"
                     }}
                     tooltip="Opens an overview of my intelligent garbage detector project via object detection."
                     colour={{
@@ -77,7 +77,7 @@ class Dock extends React.Component {
                     logo={faBox}
                     link={{
                         isExternal: false,
-                        whereToGo: ""
+                        whereToGo: "https://github.com/ajdev-1/smart-home-replenishment-system"
                     }}
                     tooltip="Opens an overview of my decentralized smart home replenishment system project with Hyperledger Fabric."
                     colour={{
@@ -92,7 +92,8 @@ class Dock extends React.Component {
                     logo={faBoxArchive}
                     link={{
                         isExternal: false,
-                        whereToGo: "https://www.umwelt-campus.de/campus/aktuelles/medien-presse/pressemitteilungen/modellierung-eines-intelligenten-bienenstocks"
+                        whereToGo: "https://www.umwelt-campus.de/campus/aktuelles/medien-presse/pressemitteilungen/modellierung-eines-intelligenten-bienenstocks",
+                        paper: "https://ieeexplore.ieee.org/document/9134323"
                     }}
                     tooltip="This app redirects you in a new browser to the press article of my awarded intelligent bee hive system."
                     colour={{
