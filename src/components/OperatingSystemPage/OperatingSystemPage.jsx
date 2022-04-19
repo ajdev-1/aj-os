@@ -18,8 +18,7 @@ class OperatingSystemPage extends React.Component {
         }
     }
 
-    welcomeToast = () => toast(`🔓 Congratulations, you cracked the password. 
-    Now feel free to explore my portfolio operating system.`, {
+    welcomeToast = () => toast(`⭐ I'm glad you're interested in my portfolio. Every app in my operating system tells you something about me, my projects or how you can get in touch with me.`, {
         theme: "dark",
         position: "bottom-left",
         autoClose: 15000,

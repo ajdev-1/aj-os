@@ -61,20 +61,21 @@ class LoginOverlay extends React.Component {
                     <div className="loginContainer">
                         <div className="loginImage"></div>
                         <div className="userText">Hello friend,</div>
-                        <div className="descriptionText">crack the password to explore my portfolio operating system</div>
+                        <div className="descriptionText">say hi to login to my portfolio operating system</div>
                         <div className="inputWrapper">
                             <input
                                 ref={this.inputRef}
-                                type="password"
+                                type="text"
                                 name=""
                                 id="loginPassword"
                                 placeholder="&#9998;"
                             />
+                            {/*
                             <div className="helpIconWrapper">
                                 <div ref={this.helpIconRef} onClick={this.helpToast} className="icon" id="help">
                                     <FontAwesomeIcon icon={faQuestion} />
                                 </div>
-                            </div>
+                            </div>*/}
                         </div>
                     </div>
                 </div>;
