@@ -80,7 +80,7 @@ class OperatingSystemPage extends React.Component {
                 );
             })
         }
-        console.log('Opened apps', appWindows);
+
         return (
             <div id="operatingSystemPageWrapper">
                 {appWindows}

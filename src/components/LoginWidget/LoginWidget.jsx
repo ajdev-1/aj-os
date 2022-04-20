@@ -1,8 +1,26 @@
 import React from "react";
 import './LoginWidget.scss';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
+import { Button } from "@mui/material";
+import { createTheme } from '@mui/material/styles';
+
+const whiteTheme = createTheme({
+    status: {
+      danger: '#efefef',
+    },
+    palette: {
+      primary: {
+        main: '#efefef',
+        darker: '#053e85',
+      },
+      neutral: {
+        main: '#64748B',
+        contrastText: '#fff',
+      },
+    },
+});
 
 class LoginOverlay extends React.Component {
 
@@ -29,19 +47,24 @@ class LoginOverlay extends React.Component {
         toastId: 'helpToast'
     });
 
-    hideOverlay = (event) => {
-        if (event.srcElement.value !== "") {
+    hideOverlay = () => {
+        //if (event.srcElement.value !== "") {
             setTimeout(() => {
                 this.loginOverlayRef.current.style.display = "None";
-            }, 600)
+            }, 300);
 
+            setTimeout(() => {
+                this.props.onOverlayActivationChange(false)
+            }, 300);
+            
             this.setState({
                 isOverlayActivated: false
-            }, this.props.onOverlayActivationChange(false))
-        }
+            })
+        //}
     }
 
     componentDidMount() {
+        /*
         this.inputRef.current.focus();
         this.inputRef.current.addEventListener("keypress", (event) => {
             if (event.key === "Enter") {
@@ -52,7 +75,7 @@ class LoginOverlay extends React.Component {
         });
         this.inputRef.current.addEventListener("focusout", (event) => {
             this.inputRef.current.value = "";
-        });
+        });*/
     }
 
     render() {
@@ -61,15 +84,20 @@ class LoginOverlay extends React.Component {
                     <div className="loginContainer">
                         <div className="loginImage"></div>
                         <div className="userText">Hello friend,</div>
-                        <div className="descriptionText">say hi to login to my portfolio operating system</div>
+                        <div className="descriptionText">do you want to login to my portfolio-operating-system?</div>
                         <div className="inputWrapper">
-                            <input
-                                ref={this.inputRef}
-                                type="text"
-                                name=""
-                                id="loginPassword"
-                                placeholder="&#9998;"
-                            />
+                            {
+                                /*
+                                    <input
+                                        ref={this.inputRef}
+                                        type="text"
+                                        name=""
+                                        id="loginPassword"
+                                        placeholder="&#9998;"
+                                    />
+                                */
+                            }
+                            <Button size="large" theme={whiteTheme} onClick={this.hideOverlay} variant="outlined">Login</Button>
                             {/*
                             <div className="helpIconWrapper">
                                 <div ref={this.helpIconRef} onClick={this.helpToast} className="icon" id="help">
