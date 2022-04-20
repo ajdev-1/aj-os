@@ -160,7 +160,52 @@ class AppWindow extends React.Component {
                         </div>
                     </div>
                     <div ref={this.appWindowContentRef} className="appWindowContent">
-                        {/* GitHub Project*/}
+                        {/* Content */}
+                        {
+                            this.appParams.name === "Me" || this.appParams.name === "Mail" ?
+                                <div></div>
+                            :
+                            <div>
+                                <div className="projectSection light projectMotivation">
+                                    <div className="titleWrapper">
+                                        <div className="projectSectionTitle">
+                                            Motivation
+                                            <div className="projectSectionTitleUnderline blue"></div>
+                                        </div>
+                                    </div>
+                                    {this.appParams.content.motivation}
+                                </div>
+                                <div className="projectSection dark projectObjective">
+                                    <div className="titleWrapper">
+                                        <div className="projectSectionTitle">
+                                            Objective
+                                            <div className="projectSectionTitleUnderline orange"></div>
+                                        </div>
+                                    </div>
+                                    {this.appParams.content.objective}
+                                </div>
+                                <div className="projectSection light projectTechnology">
+                                    <div className="titleWrapper">
+                                        <div className="projectSectionTitle">
+                                            Technology
+                                            <div className="projectSectionTitleUnderline orange2"></div>
+                                        </div>
+                                    </div>
+                                    {this.appParams.content.technology}
+                                </div>
+                                <div className="projectSection dark projectResults">
+                                    <div className="titleWrapper">
+                                        <div className="projectSectionTitle">
+                                            Results
+                                            <div className="projectSectionTitleUnderline yellow"></div>
+                                        </div>
+                                    </div>
+                                    {this.appParams.content.results}
+                                </div>
+                            </div>
+                        }
+
+                        {/* Button GitHub Project */}
                         {
                             this.appParams.link.whereToGo.includes('git')?
                                 <Fab className="fabBtn fabBtnFirst" onClick={this.redirectToAppLink} color="info" variant="extended">
@@ -169,7 +214,7 @@ class AppWindow extends React.Component {
                                 </Fab> : null
                         }
 
-                        {/* BEE Project*/}
+                        {/* Button Bee Project */}
                         {
                             this.appParams.link.whereToGo.includes('www.umwelt-campus.de')?
                                 <Fab className="fabBtn fabBtnFirst" onClick={this.redirectToAppLink} color="warning" variant="extended">

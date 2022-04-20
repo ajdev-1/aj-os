@@ -17,7 +17,8 @@ class AppInstance extends React.Component {
             appTooltip: props.tooltip,
             appLink: props.link,
             appColour: props.colour,
-            isAppInitialized: false
+            isAppInitialized: false,
+            content: props.content
         }
     }
 
@@ -36,7 +37,8 @@ class AppInstance extends React.Component {
                 enableResizing: window.innerWidth > 1280,
                 colour: this.state.appColour,
                 logo: this.state.appLogo,
-                link: this.state.appLink
+                link: this.state.appLink,
+                content: this.state.content
             })
         }
     }

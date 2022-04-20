@@ -28,12 +28,155 @@
 
             .fabBtnFirst {
                 bottom: 1rem;
-                right: 1rem;
+                right: 1.5rem;
             }
 
             .fabBtnSecond {
                 bottom: 4.5rem;
-                right: 1rem;
+                right: 1.5rem;
+            }
+
+            .light {
+                background-color: rgba(237, 237, 237, 0.2);
+            }
+
+            .dark {
+                background-color: rgba(186, 186, 186, 0.3);
+            }
+
+            .projectMotivation {
+                .projectSectionContent {
+                    .projectSectionContentText {
+                        a {
+                            background-image: linear-gradient(transparent 0%, transparent calc(50% - 9px), rgba(20, 83, 99, 0.4) calc(50% - 9px), rgba(20, 83, 99, 0.4) 100%);
+                            transition: background-position 120ms ease-in-out 0s, padding 120ms ease-in-out 0s;
+                            background-size: 100% 200%;
+                            background-position: 0px 0px;
+                        }
+                    }
+                }
+            }
+
+            .projectObjective {
+                .projectSectionContent {
+                    .projectSectionContentText {
+                        a {
+                            background-image: linear-gradient(transparent 0%, transparent calc(50% - 9px), rgba(253, 112, 59, 0.4) calc(50% - 9px), rgba(253, 112, 59, 0.4) 100%);
+                            transition: background-position 120ms ease-in-out 0s, padding 120ms ease-in-out 0s;
+                            background-size: 100% 200%;
+                            background-position: 0px 0px;
+                        }
+                    }
+                }
+            }
+
+            .projectTechnology {
+                .projectSectionContent {
+                    .projectSectionContentText {
+                        a {
+                            background-image: linear-gradient(transparent 0%, transparent calc(50% - 9px), rgba(254, 155, 61, 0.4) calc(50% - 9px), rgba(254, 155, 61, 0.4) 100%);
+                            transition: background-position 120ms ease-in-out 0s, padding 120ms ease-in-out 0s;
+                            background-size: 100% 200%;
+                            background-position: 0px 0px;
+                        }
+                    }
+                }
+            }
+
+            .projectResults {
+                .projectSectionContent {
+                    .projectSectionContentText {
+                        a {
+                            background-image: linear-gradient(transparent 0%, transparent calc(50% - 9px), rgba(253, 202, 59, 0.4) calc(50% - 9px), rgba(253, 202, 59, 0.4) 100%);
+                            transition: background-position 120ms ease-in-out 0s, padding 120ms ease-in-out 0s;
+                            background-size: 100% 200%;
+                            background-position: 0px 0px;
+                        }
+                    }
+                }
+            }
+
+            .projectSection {
+                height: auto;
+                padding-bottom: 1rem;
+
+                .titleWrapper {
+                    width: 100%;
+                    height: 5rem;
+                    height: 20%;
+
+                    .projectSectionTitle {
+                        font-size: 2rem;
+                        padding-left: 1.5rem;
+                        padding-top: 1.5rem;
+                        width: fit-content;
+                        text-align: left;
+                        height: 3rem;
+                    }
+
+                    .projectSectionTitleUnderline {
+                        width: 100%;
+                        height: 55%;
+                        margin-top: -1.2rem;
+                    }
+                }
+
+                .projectSectionContent {
+                    text-align: left;
+                    padding: 0 1.5rem 0 1.5rem;
+                    height: 80%;
+                    white-space: pre-wrap;      /* CSS3 */   
+                    white-space: -moz-pre-wrap; /* Firefox */    
+                    white-space: -pre-wrap;     /* Opera <7 */   
+                    white-space: -o-pre-wrap;   /* Opera 7 */    
+                    word-wrap: break-word;      /* IE */
+
+                    .projectSectionContentText {
+                        font-size: 1.5rem;
+                        word-wrap: break-word;
+                        max-width: 100%;
+                        min-width: 20rem;
+                    }
+
+                    .projectSectionContentImage {
+                        margin-bottom: 10rem;
+                        text-align: center;
+                        align-items: center;
+
+                        .mediumImg {
+                            width: 15rem;
+                            margin: 1rem 2rem;
+                        }
+
+                        .largeImg {
+                            width: 90%;
+                            padding: 0 1rem;
+                        }
+
+                        img {
+                            -webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+                            -moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+                            box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+                            margin: 1rem auto;
+                        }
+                    }
+                }
+
+                .blue {
+                    background-color: rgba(20, 83, 99, 0.4);
+                }
+
+                .orange {
+                    background-color: rgba(253, 112, 59, 0.4);
+                }
+
+                .orange2 {
+                    background-color: rgba(254, 155, 61, 0.4);
+                }
+
+                .yellow {
+                    background-color: rgba(253, 202, 59, 0.4);
+                }
             }
         }
 
@@ -79,6 +222,11 @@
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 300px) and (max-width: 1280px){
+    .mediumImg {
+        width: 90%;
+        padding: 0 1rem;
+    }
+
     .appWindowWrapper {
         left: 0px !important;
 
