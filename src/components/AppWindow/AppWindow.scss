@@ -136,6 +136,8 @@
                         word-wrap: break-word;
                         max-width: 100%;
                         min-width: 20rem;
+                        hyphens: auto; 
+                        text-align: justify
                     }
 
                     .projectSectionContentImage {

@@ -5,6 +5,7 @@ import Fab from '@mui/material/Fab';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import ArticleIcon from '@mui/icons-material/Article';
 import { faClose, faMaximize, faMinimize } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -41,11 +42,23 @@ class AppWindow extends React.Component {
         }
     }
 
-    redirectToAppLink = (paperLink) => {
+    redirectToAppLink = (link) => {
+        console.log(link);
+        let redirectLink = "";
+
+        if(typeof link === "object") {
+            redirectLink = this.appParams.link.whereToGo;
+        } else if(link.includes("ieee")) {
+            redirectLink = this.appParams.link.paper;
+        } else if(link.includes("nbviewer")) {
+            redirectLink = this.appParams.link.jupyter;
+        }
+
         const aTag = document.createElement("a");
         aTag.rel = "noopener";
         aTag.target = "_blank";
-        aTag.href = typeof paperLink == "string"? this.appParams.link.paper : this.appParams.link.whereToGo;
+        aTag.href = redirectLink;
+        console.log(aTag.href);
         aTag.click();
     }
 
@@ -211,6 +224,17 @@ class AppWindow extends React.Component {
                                 <Fab className="fabBtn fabBtnFirst" onClick={this.redirectToAppLink} color="info" variant="extended">
                                     <GitHubIcon sx={{ mr: 1 }} />
                                     Open GitHub
+                                </Fab> : null
+                        }
+
+                        {/* Button Jupyter Notebook */}
+                        {
+                            this.appParams.link.jupyter?
+                                <Fab className="fabBtn fabBtnSecond" onClick={() => {
+                                    this.redirectToAppLink(this.appParams.link.jupyter);
+                                }} color="warning" variant="extended">
+                                    <ArticleIcon sx={{ mr: 1 }} />
+                                    Open Jupyter Notebook
                                 </Fab> : null
                         }
 
