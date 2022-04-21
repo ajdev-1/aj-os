@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/aj-os/static/css/main.9a8ba928.css",
-    "main.js": "/aj-os/static/js/main.b2cc7ddf.js",
-    "static/media/trash3.png": "/aj-os/static/media/trash3.9f44cc60697b272a50a5.png",
+    "main.css": "/aj-os/static/css/main.7fb1e743.css",
+    "main.js": "/aj-os/static/js/main.165078ac.js",
+    "static/media/arch.png": "/aj-os/static/media/arch.38ce6f6c87bf9015a92f.png",
+    "static/media/ger.png": "/aj-os/static/media/ger.d69bed8ea13062124827.png",
     "static/media/SF-UI-Display-Regular.otf": "/aj-os/static/media/SF-UI-Display-Regular.696eab3309b55104976e.otf",
     "static/media/trash4.png": "/aj-os/static/media/trash4.4fef467f53c0064dfdf8.png",
+    "static/media/ldaviz.png": "/aj-os/static/media/ldaviz.4f0ff15623dfe522a345.png",
     "static/media/background.jpg": "/aj-os/static/media/background.6d5600a8b9bd62d061e8.jpg",
     "static/media/trash2.png": "/aj-os/static/media/trash2.5941509dccf0f83e8916.png",
+    "static/media/price.png": "/aj-os/static/media/price.099c6d8edba284ff641f.png",
     "static/media/trash1.png": "/aj-os/static/media/trash1.57924b815874a41fcf24.png",
     "static/media/avatar.jpg": "/aj-os/static/media/avatar.e639598163223d3abbb6.jpg",
+    "static/media/formula.png": "/aj-os/static/media/formula.cc8eab867ea5e0d760a7.png",
     "index.html": "/aj-os/index.html",
-    "main.9a8ba928.css.map": "/aj-os/static/css/main.9a8ba928.css.map",
-    "main.b2cc7ddf.js.map": "/aj-os/static/js/main.b2cc7ddf.js.map"
+    "main.7fb1e743.css.map": "/aj-os/static/css/main.7fb1e743.css.map",
+    "main.165078ac.js.map": "/aj-os/static/js/main.165078ac.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a8ba928.css",
-    "static/js/main.b2cc7ddf.js"
+    "static/css/main.7fb1e743.css",
+    "static/js/main.165078ac.js"
   ]
 }
