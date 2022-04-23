@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/aj-os/static/css/main.7fb1e743.css",
-    "main.js": "/aj-os/static/js/main.165078ac.js",
+    "main.js": "/aj-os/static/js/main.6c5cab9b.js",
     "static/media/arch.png": "/aj-os/static/media/arch.38ce6f6c87bf9015a92f.png",
     "static/media/ger.png": "/aj-os/static/media/ger.d69bed8ea13062124827.png",
     "static/media/SF-UI-Display-Regular.otf": "/aj-os/static/media/SF-UI-Display-Regular.696eab3309b55104976e.otf",
@@ -15,10 +15,10 @@
     "static/media/formula.png": "/aj-os/static/media/formula.cc8eab867ea5e0d760a7.png",
     "index.html": "/aj-os/index.html",
     "main.7fb1e743.css.map": "/aj-os/static/css/main.7fb1e743.css.map",
-    "main.165078ac.js.map": "/aj-os/static/js/main.165078ac.js.map"
+    "main.6c5cab9b.js.map": "/aj-os/static/js/main.6c5cab9b.js.map"
   },
   "entrypoints": [
     "static/css/main.7fb1e743.css",
-    "static/js/main.165078ac.js"
+    "static/js/main.6c5cab9b.js"
   ]
 }
