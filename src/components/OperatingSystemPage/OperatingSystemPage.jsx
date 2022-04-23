@@ -84,7 +84,7 @@ class OperatingSystemPage extends React.Component {
         return (
             <div id="operatingSystemPageWrapper">
                 {appWindows}
-                <StatusBar/>
+                <StatusBar />
                 <Dock onAppInstanceToggled={this.onAppInstanceToggled}/>
             </div>
         )
