@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Portfolio-Operating-System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the source code of my portfolio operating system. I wanted to create a - let's say different - portfolio than most of the portfolios out there. I decided to design my portfolio like an operating system. The visitor should get the feeling of searching through my own laptop/ tablet or handy, exploring all the different projects I was involved in and als how to get in touch with me.
 
-## Available Scripts
+## How can you use this project?
 
-In the project directory, you can run:
+For more information on which tools I used to create the app and how to run it within your local environment, check out the [./src](.src/README.md) folder. Feel free to download the project and use it as a starting point for your very own portfolio operating system. 😊
 
-### `npm start`
+## Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This section describes all components that make up the OS page. Furthermore, it shows how the components look on different devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🔑 Login Widget
+The [LoginWidget](./src/components/LoginWidget/LoginWidget.jsx) is used as the entry point for every new user. After clicking on the login button, the user gets redirected to the main [OperatingSystemPage](./src/components/OperatingSystemPage/OperatingSystemPage.jsx). Initially I wanted to add a input field which required a password (to make it feel like a real OS). The user would be able to type anything into that input field and then proceed. However, since most of my friends already had the feeling to leave the page when seeing a required password, I decided to use a single button...😃
 
-### `npm test`
+| Desktop     | Tablet      | Handy       |
+| ----------- | ----------- | ----------- |
+| ![Desktop](./src/assets/readme-images/desktop.png) | ![Desktop](./src/assets/readme-images/tablet.png) | ![Desktop](./src/assets/readme-images/handy.png)  |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🕐 Status Bar
+The [StatusBar](./src/components/StatusBar/StatusBar.jsx) shows the current time as well as links to this repository (the OS source code) and a link to my mail address.
 
-### `npm run build`
+| Desktop     | Tablet      | Handy       |
+| ----------- | ----------- | ----------- |
+| ![Desktop](./src/assets/readme-images/desktop_statusbar.png) | ![Desktop](./src/assets/readme-images/tablet_statusbar.png) | ![Desktop](./src/assets/readme-images/handy_statusbar.png)  |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 💻 Operating System Page and the Dock
+The [OperatingSystemPage](./src/components/OperatingSystemPage/OperatingSystemPage.jsx) is the wrapper of the whole main view. It contains the [StatusBar](./src/components/StatusBar/StatusBar.jsx) and the [Dock](./src/components/Dock/Dock.jsx) which itself spawns [AppInstance(s)](./src/components/AppInstance/AppInstance.jsx). The user is able to explore all the different apps that are shown within the dock from this view.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The [Dock](./src/components/Dock/Dock.jsx) holds all apps that describe projects or touchpoints for the OS owner. Furthermore, it responds to different screen sizes. For desktop screens it attaches itself to the left side of the screen. However, for tablets it switch to a full width view, which is usual for tablets and their OS's (not sure if the grey background here makes sense in comparison to the handy screen - let me know what you think if you are using this repo 😊). Last but not least for handy and small screens if stays in full width mode and removes the grey background.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Desktop     | Tablet      | Handy       |
+| ----------- | ----------- | ----------- |
+| ![Desktop](./src/assets/readme-images/desktop_osscreen.png) | ![Desktop](./src/assets/readme-images/tablet_osscreen.png) | ![Desktop](./src/assets/readme-images/handy_osscreen.png)  |
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔲 App Instance and App Window
+Now, the content of the page resides in the [AppInstance(s)](./src/components/AppInstance/AppInstance.jsx). When the user clicks on an app within the dock, an AppInstance gets instantiated from the AppInstance class and finally shown on the page. By itself an AppInstance only shows an empty window. The scrollable content of the AppInstance comes from the [AppWindow](./src/components/AppWindow/AppWindow.jsx) component. While it is possible to move and resize the AppInstances on desktop screens, for tablet and handy screen they are in full width mode which means that the user needs to close them in order to open another app. On desktop screens the user can open multiple windows.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Desktop     | Tablet      | Handy       |
+| ----------- | ----------- | ----------- |
+| ![Desktop](./src/assets/readme-images/desktop_window.png) | ![Desktop](./src/assets/readme-images/tablet_window.png) | ![Desktop](./src/assets/readme-images/handy_window.png)  |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📝 To-Do's
 
-## Learn More
+- [ ] Routing for the login widget as well as the operating system page.
+- [ ] Keep hiding the login widget on a refresh as soon as the user logged in once.
+- [ ] Maybe add a "Me"-app?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 👾 Known Bugs - Need to fix...
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] When maximizing/ minimizing a window, the scrollable content does not adapt to the new window size. Need to adjust the window height when the user clicked on the maximize/ minimize button.
