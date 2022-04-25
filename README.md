@@ -6,7 +6,8 @@ Welcome to the source code of my portfolio operating system. I wanted to create 
 
 ## How can you use this project?
 
-For more information on which tools I used to create the app and how to run it within your local environment, check out the [./src](./src/README.md) folder. Feel free to download the project and use it as a starting point for your very own portfolio operating system. 😊
+For more information on which tools I used to create the app and how to run it within your local environment, check out the [./src](./src/README.md) folder. Feel free to download the project and use it as a starting point for your very own portfolio operating system.
+If you are using this project as a starting point - feel free to get in touch with me and tell me what you've built. I'm highly interested in what you can built on top of this. 😊
 
 ## Components
 
