@@ -13,14 +13,14 @@ This section describes all components that make up the OS page. Furthermore, it 
 ### 🔑 Login Widget
 The [LoginWidget](./src/components/LoginWidget/LoginWidget.jsx) is used as the entry point for every new user. After clicking on the login button, the user gets redirected to the main [OperatingSystemPage](./src/components/OperatingSystemPage/OperatingSystemPage.jsx). Initially I wanted to add a input field which required a password (to make it feel like a real OS). The user would be able to type anything into that input field and then proceed. However, since most of my friends already had the feeling to leave the page when seeing a required password, I decided to use a single button...😃
 
-| Desktop     | Tablet      | Handy       |
+| Desktop     | Tablet      | Mobile      |
 | ----------- | ----------- | ----------- |
 | ![Desktop](./src/assets/readme-images/desktop.png) | ![Desktop](./src/assets/readme-images/tablet.png) | ![Desktop](./src/assets/readme-images/handy.png)  |
 
 ### 🕐 Status Bar
 The [StatusBar](./src/components/StatusBar/StatusBar.jsx) shows the current time as well as links to this repository (the OS source code) and a link to my mail address.
 
-| Desktop     | Tablet      | Handy       |
+| Desktop     | Tablet      | Mobile      |
 | ----------- | ----------- | ----------- |
 | ![Desktop](./src/assets/readme-images/desktop_statusbar.png) | ![Desktop](./src/assets/readme-images/tablet_statusbar.png) | ![Desktop](./src/assets/readme-images/handy_statusbar.png)  |
 
@@ -29,7 +29,7 @@ The [OperatingSystemPage](./src/components/OperatingSystemPage/OperatingSystemPa
 
 The [Dock](./src/components/Dock/Dock.jsx) holds all apps that describe projects or touchpoints for the OS owner. Furthermore, it responds to different screen sizes. For desktop screens it attaches itself to the left side of the screen. However, for tablets it switch to a full width view, which is usual for tablets and their OS's (not sure if the grey background here makes sense in comparison to the handy screen - let me know what you think if you are using this repo 😊). Last but not least for handy and small screens if stays in full width mode and removes the grey background.
 
-| Desktop     | Tablet      | Handy       |
+| Desktop     | Tablet      | Mobile      |
 | ----------- | ----------- | ----------- |
 | ![Desktop](./src/assets/readme-images/desktop_osscreen.png) | ![Desktop](./src/assets/readme-images/tablet_osscreen.png) | ![Desktop](./src/assets/readme-images/handy_osscreen.png)  |
 
@@ -37,7 +37,7 @@ The [Dock](./src/components/Dock/Dock.jsx) holds all apps that describe projects
 ### 🔲 App Instance and App Window
 Now, the content of the page resides in the [AppInstance(s)](./src/components/AppInstance/AppInstance.jsx). When the user clicks on an app within the dock, an AppInstance gets instantiated from the AppInstance class and finally shown on the page. By itself an AppInstance only shows an empty window. The scrollable content of the AppInstance comes from the [AppWindow](./src/components/AppWindow/AppWindow.jsx) component. While it is possible to move and resize the AppInstances on desktop screens, for tablet and handy screen they are in full width mode which means that the user needs to close them in order to open another app. On desktop screens the user can open multiple windows.
 
-| Desktop     | Tablet      | Handy       |
+| Desktop     | Tablet      | Mobile      |
 | ----------- | ----------- | ----------- |
 | ![Desktop](./src/assets/readme-images/desktop_window.png) | ![Desktop](./src/assets/readme-images/tablet_window.png) | ![Desktop](./src/assets/readme-images/handy_window.png)  |
 
