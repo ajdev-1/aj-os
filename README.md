@@ -1,10 +1,13 @@
 # Portfolio-Operating-System
 
+I've published this repo with GitHub Pages: https://ajdev-1.github.io/aj-os/
+
 Welcome to the source code of my portfolio operating system. I wanted to create a - let's say different - portfolio than most of the portfolios out there. I decided to design my portfolio like an operating system. The visitor should get the feeling of searching through my own laptop/ tablet or handy, exploring all the different projects I was involved in and als how to get in touch with me.
 
 ## How can you use this project?
 
-For more information on which tools I used to create the app and how to run it within your local environment, check out the [./src](./src/README.md) folder. Feel free to download the project and use it as a starting point for your very own portfolio operating system. 😊
+For more information on which tools I used to create the app and how to run it within your local environment, check out the [./src](./src/README.md) folder. Feel free to download the project and use it as a starting point for your very own portfolio operating system.
+If you are using this project as a starting point - feel free to get in touch with me and tell me what you've built. I'm highly interested in what you can built on top of this. 😊
 
 ## Components
 
